@@ -11,7 +11,6 @@ module.exports = {
   devtool: false,
   entry: {
     'process-lambda': './src/process-lambda.ts',
-    'submit-lambda': './src/submit-lambda.ts',
   },
   optimization: {
     namedModules: false,

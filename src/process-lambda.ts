@@ -19,10 +19,12 @@ export async function handler(event: InputData) {
       data: event.payload,
     });
   } catch (e) {
+    // tslint:disable-next-line:no-console
     console.error(event, e);
     throw new Error(`${event.id} failed to invoke URL ${event.url}`);
   }
   if (response.status < 200 || response.status >= 300) {
+    // tslint:disable-next-line:no-console
     console.error(event, response);
     throw new Error(`${event.id} returned ${response.status} code.`);
   }
