@@ -33,7 +33,7 @@ builddeploy_steps: &builddeploy_steps
       - run: 
           name: Running Build
           command: |
-            npm i aws-cdk
+            sudo npm i -g aws-cdk
             yarn
             yarn run build
       #- save_cache: *save_cache_settings
@@ -42,7 +42,9 @@ builddeploy_steps: &builddeploy_steps
           command: |
             ./awsconfiguration.sh $DEPLOY_ENV
             source awsenvconf
+            cdk bootstrap
             cdk synth
+            cdk deploy
             # ./buildenv.sh -e $DEPLOY_ENV -b ${LOGICAL_ENV}-${APPNAME}-deployvar
             # source buildenvvar
             # ./master_deploy.sh -d ECS -e $DEPLOY_ENV -t latest -s ${LOGICAL_ENV}-global-appvar,${LOGICAL_ENV}-${APPNAME}-appvar -i ${APPNAME}
