@@ -1,5 +1,6 @@
-cdk.out/
 dist/
 node_modules/
+.serverless/
 
 .DS_Store
+.env
