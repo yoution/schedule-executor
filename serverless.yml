@@ -39,4 +39,5 @@ stepFunctions:
             Resource:
               Fn::GetAtt: [processLambda, Arn]
             End: true
+      retain: true
   validate: true 
