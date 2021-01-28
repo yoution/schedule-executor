@@ -13,22 +13,14 @@ Dev: [![CircleCI](https://circleci.com/gh/topcoder-platform/schedule-executor/tr
 ## Requirements
 
 - node v10
-- cdk:
-  - `npm i -g aws-cdk`
 
 ## Deploy
 
 ```bash
-yarn
-yarn run build
-cdk bootstrap
-cdk deploy
+npm install
+npm run deploy
 ```
-
-## Lint
-
-Run `yarn run lint`
 
 ## Destory instances
 
-Run `cdk destroy` to clean up AWS resources.
+Run `npm run destroy` to clean up AWS resources.
