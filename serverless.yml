@@ -1,0 +1,39 @@
+service: topcoder-scheduler-executor
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  memorySize: 256
+  timeout: 60
+  lambdaHashingVersion: 20201221
+
+plugins:
+  - serverless-step-functions
+  - serverless-bundle
+
+custom:
+  bundle:
+    linting: false
+
+functions:
+  processLambda:
+    handler: src/process-lambda.handler
+    
+stepFunctions:
+  stateMachines:
+    scheduler:
+      name: StateMachine
+      definition:
+        StartAt: waitX
+        States:
+          waitX:
+            Type: Wait
+            TimestampPath: "$.scheduleTime"
+            Next: processTask
+          processTask:
+            Type: Task
+            Resource:
+              Fn::GetAtt: [processLambda, Arn]
+            End: true
+      retain: true
+  validate: true 
