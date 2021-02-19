@@ -7,12 +7,14 @@ import { InputData } from './types';
 import axios, { AxiosResponse } from 'axios';
 import { getAuth0Audience, getAuth0ClientId, getAuth0ClientSecret, getAuth0Url, getTokenCacheTime } from './config';
 
-const m2mAuth = require('tc-core-library-js').auth.m2m
+const m2mAuth = require('tc-core-library-js').auth.m2m;
 const m2m = m2mAuth({
   AUTH0_URL: getAuth0Url(),
   AUTH0_AUDIENCE: getAuth0Audience(),
   TOKEN_CACHE_TIME: getTokenCacheTime()
-})
+});
+
+console.log(getAuth0Url());
 
 /**
  * Get M2M token.
