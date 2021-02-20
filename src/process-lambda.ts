@@ -6,8 +6,9 @@
 import { InputData } from './types';
 import axios, { AxiosResponse } from 'axios';
 import { getAuth0Audience, getAuth0ClientId, getAuth0ClientSecret, getAuth0Url, getTokenCacheTime } from './config';
+import tcCoreLib from 'tc-core-library-js'
 
-const m2mAuth = require('tc-core-library-js').auth.m2m;
+const m2mAuth = tcCoreLib.auth.m2m;
 const m2m = m2mAuth({
   AUTH0_URL: getAuth0Url(),
   AUTH0_AUDIENCE: getAuth0Audience(),
