@@ -15,8 +15,6 @@ const m2m = m2mAuth({
   TOKEN_CACHE_TIME: getTokenCacheTime()
 });
 
-console.log(getAuth0Url());
-
 /**
  * Get M2M token.
  * @returns {Promise<String>} the M2M token
