@@ -17,5 +17,5 @@
     "esModuleInterop": true,
     "plugins": []
   },
-  "include": ["src"]
+  "include": ["src", "./decs.d.ts"]
 }
