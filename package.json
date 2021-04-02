@@ -13,11 +13,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.21.1",
-    "tc-core-library-js": "github:appirio-tech/tc-core-library-js#dev",
-    "ts-standard": "^10.0.0"
+    "axios": "^0.21.1"
   },
   "devDependencies": {
+    "ts-standard": "^10.0.0",
     "@types/node": "^12.7.5",
     "serverless": "^2.21.1",
     "serverless-bundle": "^4.2.0",
