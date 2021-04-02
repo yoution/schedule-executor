@@ -1,4 +1,4 @@
-service: topcoder-scheduler-executor
+service: topcoder-scheduler-executor-new
 useDotenv: true
 
 provider:
@@ -6,7 +6,16 @@ provider:
   runtime: nodejs10.x
   memorySize: 256
   timeout: 60
-  lambdaHashingVersion: 20201221
+  lambdaHashingVersion: 20210402
+  iamRoleStatements:
+    - Effect: 'Allow'
+      Action:
+        - 'lambda:InvokeFunction'
+      Resource: '*'
+    - Effect: 'Allow'
+      Action:
+        - states:StartExecution
+      Resource: '*'
 
 plugins:
   - serverless-step-functions

@@ -5,14 +5,17 @@
   "homepage": "https://github.com/topcoder-platform/schedule-executor#readme",
   "scripts": {
     "deploy": "serverless deploy -v",
-    "destroy": "serverless remove"
+    "destroy": "serverless remove",
+    "lint": "ts-standard",
+    "lint:fix": "ts-standard --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
-    "tc-core-library-js": "github:appirio-tech/tc-core-library-js#dev"
+    "tc-core-library-js": "github:appirio-tech/tc-core-library-js#dev",
+    "ts-standard": "^10.0.0"
   },
   "devDependencies": {
     "@types/node": "^12.7.5",
