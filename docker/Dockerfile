@@ -9,6 +9,5 @@ WORKDIR /schedule-executor-new
 RUN npm install
 
 # Set working directory for future use
-WORKDIR /schedule-executor-new/src
 
 CMD [ "process-lambda.handler" ]
