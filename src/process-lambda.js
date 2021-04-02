@@ -3,30 +3,27 @@
  * step function and making an HTTP request.
  */
 
-import { InputData } from './types'
-import axios, { AxiosResponse } from 'axios'
+import axios from 'axios'
 
 /**
  * Main lambda handler.
  */
-export async function handler (event: InputData) {
-  let response: AxiosResponse<any> = null!
+export async function handler (event) {
+  let response = null
   try {
     response = await axios.request({
       url: process.env.LAMBDA_URL,
       method: event.method,
       headers: {
-        'content-type': 'application/json',
+        'content-type': 'application/json'
       },
       data: event.payload
     })
   } catch (e) {
-    // tslint:disable-next-line:no-console
     console.error(event, e)
-    throw new Error(`${event.id} failed to invoke URL ${event.url}`)
+    throw new Error(`${event.id} failed to invoke URL`)
   }
   if (response.status < 200 || response.status >= 300) {
-    // tslint:disable-next-line:no-console
     console.error(event, response)
     throw new Error(`${event.id} returned ${response.status} code.`)
   }

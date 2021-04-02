@@ -6,8 +6,8 @@
   "scripts": {
     "deploy": "serverless deploy -v",
     "destroy": "serverless remove",
-    "lint": "ts-standard",
-    "lint:fix": "ts-standard --fix"
+    "lint": "standard",
+    "lint:fix": "standard --fix"
   },
   "keywords": [],
   "author": "",
@@ -16,11 +16,10 @@
     "axios": "^0.21.1"
   },
   "devDependencies": {
-    "ts-standard": "^10.0.0",
-    "@types/node": "^12.7.5",
     "serverless": "^2.21.1",
     "serverless-bundle": "^4.2.0",
-    "serverless-step-functions": "^2.29.0"
+    "serverless-step-functions": "^2.29.0",
+    "standard": "^16.0.3"
   },
   "engines": {
     "node": "^10.x"
